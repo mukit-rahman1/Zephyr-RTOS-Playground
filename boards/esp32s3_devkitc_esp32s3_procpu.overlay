@@ -1,0 +1,35 @@
+/ {
+    aliases {
+        led0 = &my_led0;
+        sw0 = &my_button0;
+    };
+
+    leds {
+        compatible = "gpio-leds";
+        my_led0: led_0 {
+            gpios = <&gpio0 14 GPIO_ACTIVE_HIGH>;
+            label = "GPIO14_LED";
+        };
+    };
+
+    buttons {
+        compatible = "gpio-keys";
+        my_button0: button_0 {
+            gpios = <&gpio0 8 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+        };
+    };
+
+    w1: onewire {
+        compatible ="zephyr,w1-gpio";
+        gpios = <&gpio0 10 (GPIO_PULL_UP | GPIO_OPEN_DRAIN)>; /* DQ on GPIO10 */
+        status = "okay";
+    };
+};
+
+&w1 {
+    ds18b20: ds18b20 {
+        compatible = "maxim,ds18b20";
+        status = "okay";
+        resolution = <12>;
+    };
+};
