@@ -5,8 +5,7 @@ A minimal Zephyr RTOS project for the **ESP32-S3 DevKitC** that:
 - Uses a GPIO button interrupt to **toggle a paused state**
 - Temperature logging using DS18B20 sensor
 
-The purpose of this project is to become familiar with Zephyr RTOS and West to be able to develop on the STM32 Satnoggs Communications board in Queen's Space Engineering Team  
-
+The purpose of this project is to become familiar with Zephyr RTOS and West
 ---
 
 ## Install
